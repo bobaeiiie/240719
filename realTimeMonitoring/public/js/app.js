@@ -20899,6 +20899,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+var API_KEY = '88797363030fb80929d9ac1a0a4bfc55';
+var BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
+
+// 화면에 표시될 날씨 상태의 이름
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   __name: 'AppComponent',
   setup: function setup(__props, _ref) {
@@ -20938,9 +20943,15 @@ __webpack_require__.r(__webpack_exports__);
         dateInput.value = addDays(dateInput.value, 1);
       });
     });
+
+    // OpenWeatherMap API에 필요한 정보
+    var weather = ['현재 온도', '체감 온도', '최저 기온', '최고 기온', '기압', '습도'];
     var __returned__ = {
       getTodayDate: getTodayDate,
-      addDays: addDays
+      addDays: addDays,
+      API_KEY: API_KEY,
+      BASE_URL: BASE_URL,
+      weather: weather
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -20965,9 +20976,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header><h1>실시간지역별날씨모니터링사이트제목</h1><div class=\"date-container\"><div>날짜를 선택해주세요.</div><div class=\"date-select\"><button id=\"prev-day\">&lt;</button><input type=\"date\" id=\"date-input\"><button id=\"next-day\">&gt;</button></div></div></header><main><div class=\"item-container\"><div class=\"item\"><div class=\"game\"> 게임 정보 </div><div class=\"region\"> 지역 정보 </div><div class=\"wether-icon\"> 날씨 아이콘 </div><div> 전체 적인 날씨: <br> 흐림 정도: <br> 풍속: <br> 현재 온도: <br> 체감 온도: <br> 최저 기온: <br> 최고 기온: <br> 습도: <br></div><div> 결론적으로 머 들어갈 문구 </div></div><div class=\"item\"> fgdg </div><div class=\"item\"> fgdg </div><div class=\"item\"> fgdg </div><div class=\"item\"> fgdg </div></div></main>", 2);
+var _hoisted_1 = {
+  "class": "container"
+};
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"header\"><h1>실시간지역별날씨모니터링사이트제목</h1><div class=\"date-container\"><div>날짜를 선택해주세요.</div><div class=\"date-select\"><button id=\"prev-day\">&lt;</button><input type=\"date\" id=\"date-input\"><button id=\"next-day\">&gt;</button></div></div></div><div class=\"main-top\"><div class=\"item-container\"><div class=\"item\"><div class=\"game\"> 게임 정보 </div><div class=\"region\"> 지역 정보 </div><div class=\"wether-icon\"> 날씨 아이콘 </div><div> 날씨: </div></div><div class=\"item\"> fgdg </div><div class=\"item\"> fgdg </div><div class=\"item\"> fgdg </div><div class=\"item\"> fgdg </div></div></div><div class=\"main-bottom\"><div class=\"item-detail\"><div class=\"game\"> 게임 정보 </div><div class=\"region\"> 지역 정보 </div><div class=\"wether-icon\"> 날씨 아이콘 </div><div> 날씨: </div><div> 흐림 정도: </div><div> 풍속: </div><div> 현재 온도: </div><div> 체감 온도: </div><div> 최저 기온: </div><div> 최고 기온: </div><div> 습도: </div><div> 문구 </div></div></div>", 3);
+var _hoisted_5 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return _hoisted_1;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [].concat(_hoisted_5));
 }
 
 /***/ }),
@@ -21141,7 +21156,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "header {\r\n    margin: 20px auto 0 auto;\r\n    width: 1000px;\r\n    height: 300px;\r\n    border-radius: 2rem;\r\n    box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5);\r\n    display: grid;\r\n    justify-items: center;\r\n    align-content: space-evenly\r\n}\r\n\r\n.date-container {\r\n    /* background-color: blue; */\r\n    width: 500px;\r\n    height: 100px;\r\n    margin: auto;\r\n    display: grid;\r\n    grid-template-rows: 1fr 3fr;\r\n    justify-items: center;\r\n    align-content: space-evenly\r\n    /* align-content: space-evenly */\r\n}\r\n\r\n.date-select {\r\n    margin: auto;\r\n    width: 500px;\r\n    display: grid;\r\n    grid-template-columns: 1fr auto 1fr;\r\n    justify-items: center;\r\n    align-content: space-evenly;\r\n}\r\n\r\n.date-select input {\r\n    width: 300px;\r\n    height: 50px;\r\n    cursor: pointer;\r\n    /* border: none; */\r\n    /* box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5); */\r\n    border-radius: 2rem;\r\n    text-align: center;\r\n    font-size: 1.2rem;\r\n}\r\n\r\n.date-select button {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-color: #fff;\r\n    border: none;\r\n    border-radius: 5rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.date-select > *:hover {\r\n    background-color: #ececec;\r\n}\r\n\r\nmain {\r\n    margin: 20px auto 0 auto;\r\n    width: 1000px;\r\n    height: 300px;\r\n    display: grid;\r\n    justify-items: center;\r\n    align-content: space-evenly\r\n}\r\n\r\n.item-container {\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: red; */\r\n    display: grid;\r\n    grid-template-columns: repeat(5, 1fr);\r\n}\r\n\r\n.item {\r\n    /* margin: 20px; */\r\n    width: auto;\r\n    height: 300px;\r\n    border-radius: 2rem;\r\n    box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5);\r\n}\r\n\r\n.item:not(:last-child) {\r\n    margin-right: 20px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container {\r\n    display: grid;\r\n    grid-template-rows: repeat(3, 1fr);\r\n    height: 100vh;\r\n}\r\n\r\n.header {\r\n    margin: auto;\r\n    width: 1500px;\r\n    height: 300px;\r\n    border-radius: 2rem;\r\n    box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5);\r\n    display: grid;\r\n    justify-items: center;\r\n    align-content: space-evenly\r\n}\r\n\r\n.date-container {\r\n    width: 1500px;\r\n    height: 100px;\r\n    margin: auto;\r\n    display: grid;\r\n    grid-template-rows: 1fr 3fr;\r\n    justify-items: center;\r\n    align-content: space-evenly\r\n}\r\n\r\n.date-select {\r\n    margin: auto;\r\n    width: 1500px;\r\n    display: grid;\r\n    grid-template-columns: 1fr auto 1fr;\r\n    justify-items: center;\r\n    align-content: space-evenly;\r\n}\r\n\r\n.date-select input {\r\n    width: 300px;\r\n    height: 50px;\r\n    cursor: pointer;\r\n    border-radius: 2rem;\r\n    text-align: center;\r\n    font-size: 1.2rem;\r\n}\r\n\r\n.date-select button {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-color: #fff;\r\n    border: none;\r\n    border-radius: 5rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.date-select > *:hover {\r\n    background-color: #ececec;\r\n}\r\n\r\n.main-top {\r\n    margin: auto;\r\n    width: 1500px;\r\n    height: 300px;\r\n    display: grid;\r\n    justify-items: center;\r\n    align-content: space-evenly\r\n}\r\n\r\n.item-container {\r\n    width: 100%;\r\n    height: 100%;\r\n    /* background-color: red; */\r\n    display: grid;\r\n    grid-template-columns: repeat(5, 1fr);\r\n}\r\n\r\n.item {\r\n    width: auto;\r\n    height: 300px;\r\n    border-radius: 2rem;\r\n    box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5);\r\n}\r\n\r\n.item:not(:last-child) {\r\n    margin-right: 20px;\r\n}\r\n\r\n.main-bottom {\r\n    margin: auto;\r\n    width: 1500px;\r\n    height: 300px;\r\n    border-radius: 2rem;\r\n    box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5);\r\n    display: grid;\r\n    justify-items: center;\r\n    align-content: space-evenly\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -1,18 +1,48 @@
 <template>
-    <header>
-        <h1>실시간지역별날씨모니터링사이트제목</h1>
-        <div class="date-container">
-            <div>날짜를 선택해주세요.</div>
-            <div class="date-select">
-                <button id="prev-day"><</button>
-                <input type="date" id="date-input">
-                <button id="next-day">></button>
+    <div class="container">
+        <div class="header">
+            <h1>실시간지역별날씨모니터링사이트제목</h1>
+            <div class="date-container">
+                <div>날짜를 선택해주세요.</div>
+                <div class="date-select">
+                    <button id="prev-day"><</button>
+                    <input type="date" id="date-input">
+                    <button id="next-day">></button>
+                </div>
             </div>
         </div>
-    </header>
-    <main>
-        <div class="item-container">
-            <div class="item">
+        <div class="main-top">
+            <div class="item-container">
+                <div class="item">
+                    <div class="game">
+                        게임 정보
+                    </div>
+                    <div class="region">
+                        지역 정보
+                    </div>
+                    <div class="wether-icon">
+                        날씨 아이콘
+                    </div>
+                    <div>
+                        날씨:
+                    </div>
+                </div>
+                <div class="item">
+                    fgdg
+                </div>
+                <div class="item">
+                    fgdg
+                </div>
+                <div class="item">
+                    fgdg
+                </div>
+                <div class="item">
+                    fgdg
+                </div>
+            </div>
+        </div>
+        <div class="main-bottom">
+            <div class="item-detail">
                 <div class="game">
                     게임 정보
                 </div>
@@ -23,33 +53,36 @@
                     날씨 아이콘
                 </div>
                 <div>
-                    전체 적인 날씨: <br>
-                    흐림 정도: <br>
-                    풍속: <br>
-                    현재 온도: <br>
-                    체감 온도: <br>
-                    최저 기온: <br>
-                    최고 기온: <br>
-                    습도: <br>
+                    날씨:
+                </div>
+                <div >
+                    흐림 정도: 
                 </div>
                 <div>
-                    결론적으로 머 들어갈 문구
+                    풍속: 
+                </div>
+                <div>
+                    현재 온도: 
+                </div>
+                <div>
+                    체감 온도: 
+                </div>
+                <div>
+                    최저 기온: 
+                </div>
+                <div>
+                    최고 기온: 
+                </div>
+                <div>
+                    습도: 
+                </div>
+                <div>
+                    문구
                 </div>
             </div>
-            <div class="item">
-                fgdg
-            </div>
-            <div class="item">
-                fgdg
-            </div>
-            <div class="item">
-                fgdg
-            </div>
-            <div class="item">
-                fgdg
-            </div>
         </div>
-    </main>
+        
+    </div>
 </template>
 
 <script setup>
@@ -87,6 +120,23 @@
                 dateInput.value = addDays(dateInput.value, 1);
             });
         });
+
+        // OpenWeatherMap API에 필요한 정보
+        const API_KEY = '88797363030fb80929d9ac1a0a4bfc55';
+        const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
+
+        // 화면에 표시될 날씨 상태의 이름
+        const weather = [
+        '현재 온도',
+        '체감 온도',
+        '최저 기온',
+        '최고 기온',
+        '기압',
+        '습도',
+        ];
+
+
+    
 </script>
 
 <style>
