@@ -7,7 +7,7 @@ import router from './router';
 
 createApp({
     components: {
-        'app-component': AppComponent,
+        AppComponent,
     }
 })
 .use(store)

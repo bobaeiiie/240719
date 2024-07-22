@@ -4,12 +4,12 @@ import AppComponent from '../components/AppComponent.vue';
 const routes = [
     {
         path: "/",
-        redirect: "/main",
-    },
-    {
-        path: "/main",
         component: AppComponent,
     },
+    // {
+    //     path: "/main",
+    //     component: AppComponent,
+    // },
 ];
 
 

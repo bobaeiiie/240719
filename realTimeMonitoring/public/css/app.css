@@ -1,1 +1,84 @@
+header {
+    margin: 20px auto 0 auto;
+    width: 1000px;
+    height: 300px;
+    border-radius: 2rem;
+    box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5);
+    display: grid;
+    justify-items: center;
+    align-content: space-evenly
+}
 
+.date-container {
+    /* background-color: blue; */
+    width: 500px;
+    height: 100px;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    justify-items: center;
+    align-content: space-evenly
+    /* align-content: space-evenly */
+}
+
+.date-select {
+    margin: auto;
+    width: 500px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: center;
+    align-content: space-evenly;
+}
+
+.date-select input {
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+    /* border: none; */
+    /* box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5); */
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.date-select button {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.date-select > *:hover {
+    background-color: #ececec;
+}
+
+main {
+    margin: 20px auto 0 auto;
+    width: 1000px;
+    height: 300px;
+    display: grid;
+    justify-items: center;
+    align-content: space-evenly
+}
+
+.item-container {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.item {
+    /* margin: 20px; */
+    width: auto;
+    height: 300px;
+    border-radius: 2rem;
+    box-shadow: 1px 2px 5px 2px rgb(189, 189, 189, 0.5);
+}
+
+.item:not(:last-child) {
+    margin-right: 20px;
+}
